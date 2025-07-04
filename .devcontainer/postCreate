@@ -2,19 +2,10 @@
 
 echo "Current user: $(whoami)"
 
-echo "Updating RubyGems..."
-gem update --system -N
-
 if [ -f "Gemfile" ]; then
   bundle install
 else
   echo "No Gemfile found, skipping dependencies installation."
-fi
-
-if [ -f "package.json" ]; then
-  yarn install
-else
-  echo "No package.json found, skipping JavaScript dependencies installation."
 fi
 
 echo "Copying database.yml..."
@@ -22,8 +13,9 @@ cp --update=none config/database.yml.example config/database.yml
 
 if [ -f "bin/rails" ]; then
   bin/rails db:prepare
+  bin/rails tailwindcss:install
 else
-  echo "bin/rails not found, skipping database preparation."
+  echo "bin/rails not found, skipping database and tailwindcss preparation."
 fi
 
 echo "Done!"

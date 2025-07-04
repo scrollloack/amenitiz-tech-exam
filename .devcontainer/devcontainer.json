@@ -4,23 +4,21 @@
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
       "username": "vscode",
-      "plugins": "bundler git rails ruby yarn"
+      "plugins": "bundler git rails ruby"
     }
   },
   "customizations": {
     "vscode": {
       "extensions": [
         "rebornix.Ruby",
+        "Shopify.ruby-lsp",
         "ms-vscode.vscode-typescript-next",
         "esbenp.prettier-vscode",
         "wingrunr21.vscode-ruby",
         "misogi.ruby-rubocop",
         "hridoy.rails-snippets",
-        "ninoseki.vscode-gem-lens",
-        "eamodio.gitlens",
         "kaiwood.endwise",
         "esbenp.prettier-vscode",
         "karunamurti.rspec-snippets",
@@ -29,6 +27,36 @@
       ]
     },
     "settings": {
+      "files.associations": {
+        "Gemfile": "ruby"
+      },
+      "[ruby]": {
+        "editor": {
+          "defaultFormatter": "Shopify.ruby-lsp",
+          "formatOnSave": true,
+          "tabSize": 2,
+          "insertSpaces": true,
+          "semanticHighlighting.enabled": true,
+          "formatOnType": true
+        }
+      },
+      "[erb]": {
+        "editor": {
+          "formatOnSave": false
+        }
+      },
+      "rubyLsp": {
+        "rubyVersionManager": "rbenv",
+        "formatter": "rubocop",
+        "bundleGemfile": "../.ruby-lsp/Gemfile"
+      },
+      "[yaml, yml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+      },
+      "prettier": {
+        "configPath": ".devcontainer/prettierrc.yaml"
+      },
       "terminal.integrated.defaultProfile.linux": "zsh"
     }
   },
