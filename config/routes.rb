@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :products, only: [ :index ] do
-    post "add_to_cart", on: :member
+    post "add_to_cart", on: :collection
+    delete "clear_cart", on: :collection
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
