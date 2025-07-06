@@ -1,6 +1,6 @@
 class ClearCartService
-  def initialize(user_id)
-    @redis = $redis
+  def initialize(user_id, redis = $redis)
+    @redis = redis
     @key = "cart:#{user_id}"
   end
 

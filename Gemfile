@@ -24,7 +24,6 @@ gem "jbuilder"
 
 gem "redis", "~> 5.2"
 
-gem "webmock", "~> 3.25", ">= 3.25.1"
 gem "json", "~> 2.12", ">= 2.12.2"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -74,5 +73,8 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem "rspec", "~> 3.4"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "database_cleaner-active_record"
+  gem "rspec-rails", "~> 8.0", ">= 8.0.1"
 end

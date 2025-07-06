@@ -1,7 +1,7 @@
 class RedisRepository
-  def initialize(key)
+  def initialize(key, redis = $redis)
     @key = key
-    @redis = $redis
+    @redis = redis
   end
 
   def expiration_time

@@ -12,3 +12,8 @@ Layout/IndentationConsistency:
 
 Layout/IndentationWidth:
   Enabled: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  Include:
+    - "spec/**/*"

@@ -55,6 +55,9 @@
       cart[productCode] = data;
       updateCartUI();
     })
+    .catch(() => {
+      alert("Error fetching data: Too many requests. Try again later.");
+    });
   }
 
   function updateCartUI() {
@@ -78,6 +81,9 @@
     }).then(() => {
       for (const key in cart) delete cart[key];
       updateCartUI();
+    })
+    .catch(() => {
+      alert("Error fetching data: Too many requests. Try again later.");
     });
   }
 </script>
