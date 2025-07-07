@@ -1,11 +1,4 @@
 class ProductsController < ApplicationController
-  unless Rails.env.test?
-    rate_limit to: 4, within: 1.minute,
-    by: -> { request.remote_ip },
-    with: -> { redirect_to "/not_found" },
-    only: [ :index, :add_to_cart, :clear_cart ]
-  end
-
   def index
     @products = GetProductsService.call
 
