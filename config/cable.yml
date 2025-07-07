@@ -17,4 +17,4 @@ test:
 production:
   <<: *default
   url: <%= ENV.fetch('DATABASE_URL', 'localhost') %>
-  database: app_production
+  database: app_production_h8ap

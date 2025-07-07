@@ -1,3 +1,3 @@
 # Amenitiz Tech Exam
 
-TBU
+A technical exam
