@@ -3,18 +3,11 @@
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "features": {
-    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
-      "username": "vscode",
-      "plugins": "bundler git rails ruby"
-    }
-  },
   "customizations": {
     "vscode": {
       "extensions": [
         "rebornix.Ruby",
         "Shopify.ruby-lsp",
-        "ms-vscode.vscode-typescript-next",
         "esbenp.prettier-vscode",
         "wingrunr21.vscode-ruby",
         "misogi.ruby-rubocop",
@@ -56,8 +49,7 @@
       },
       "prettier": {
         "configPath": ".devcontainer/prettierrc.yaml"
-      },
-      "terminal.integrated.defaultProfile.linux": "zsh"
+      }
     }
   },
   "postStartCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename}",

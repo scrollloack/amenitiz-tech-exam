@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 echo "Current user: $(whoami)"
 
@@ -9,13 +10,12 @@ else
 fi
 
 echo "Copying database.yml..."
-cp --update=none config/database.yml.example config/database.yml
+cp -n config/database.yml.example config/database.yml
 
 if [ -f "bin/rails" ]; then
   bin/rails db:prepare
-  bin/rails tailwindcss:install
 else
-  echo "bin/rails not found, skipping database and tailwindcss preparation."
+  echo "bin/rails not found, skipping database."
 fi
 
 echo "Done!"
