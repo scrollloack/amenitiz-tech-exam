@@ -1,0 +1,40 @@
+{
+  "name": "tech-exam",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      "username": "vscode",
+      "plugins": "bundler git rails ruby yarn"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rebornix.Ruby",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "wingrunr21.vscode-ruby",
+        "misogi.ruby-rubocop",
+        "hridoy.rails-snippets",
+        "ninoseki.vscode-gem-lens",
+        "eamodio.gitlens",
+        "kaiwood.endwise",
+        "esbenp.prettier-vscode",
+        "karunamurti.rspec-snippets",
+        "2gua.rainbow-brackets",
+        "oderwat.indent-rainbow"
+      ]
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "zsh"
+    }
+  },
+  "postStartCommand": "git config --global --add safe.directory /workspaces/app",
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": ".devcontainer/postCreate",
+  "forwardPorts": [3000, 5432],
+  "remoteUser": "vscode"
+}
