@@ -60,9 +60,9 @@
       "terminal.integrated.defaultProfile.linux": "zsh"
     }
   },
-  "postStartCommand": "git config --global --add safe.directory /workspaces/app",
+  "postStartCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename}",
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": ".devcontainer/postCreate",
-  "forwardPorts": [3000, 5432],
+  "forwardPorts": [3000, 5432, 6379],
   "remoteUser": "vscode"
 }

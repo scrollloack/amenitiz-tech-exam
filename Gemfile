@@ -11,6 +11,8 @@ gem "puma", ">= 5.0"
 
 gem "tailwindcss-rails", "~> 2.3"
 
+gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
+
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
@@ -20,7 +22,7 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'redis', '~> 5.2'
+gem "redis", "~> 5.2"
 
 gem "webmock", "~> 3.25", ">= 3.25.1"
 gem "json", "~> 2.12", ">= 2.12.2"

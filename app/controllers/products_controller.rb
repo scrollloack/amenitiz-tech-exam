@@ -11,7 +11,16 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    puts "Hello world!=====#{params[:id]}"
-    render plain: "OK!"
+    user_id = session.id
+    result = AddToCartService.new(params[:data], user_id).call
+
+    render json: result
+  end
+
+  def clear_cart
+    user_id = session.id
+    ClearCartService.new(user_id).call
+
+    head :no_content
   end
 end
